@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import tmdb from '../api/tmdbApi';
 import Thumbnail from './Thumbnail';
-import styles from './GridList.module.css'; // ⬅️ Importação chave
+import styles from './GridList.module.css';
 
 // Componente de Paginação 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
@@ -46,7 +46,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 <button 
                     key={number} 
                     onClick={() => onPageChange(number)}
-                    // Aplica a classe 'active' se for a página atual
                     className={`${styles.pageButton} ${number === currentPage ? styles.active : ''}`}
                 >
                     {number}
@@ -86,7 +85,6 @@ const GridList = ({ fetchUrl, mediaType }) => {
         async function fetchGrid() {
             setLoading(true);
             try {
-                // Adiciona o número da página na URL de busca
                 const urlWithPage = `${fetchUrl}?page=${page}`;
                 
                 const response = await tmdb.get(urlWithPage); 
@@ -123,7 +121,6 @@ const GridList = ({ fetchUrl, mediaType }) => {
             {/* Aplica a classe de grid */}
             <div className={styles.grid}>
                 {items.map(item => (
-                    // O Thumbnail já foi refatorado e está pronto para receber o item
                     <Thumbnail key={item.id} item={item} />
                 ))}
             </div>
