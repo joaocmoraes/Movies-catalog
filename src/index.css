@@ -12,16 +12,12 @@ code {
     monospace;
 }
 
-/* No seu arquivo CSS */
-
-/* Garante que o menu suspenso esteja oculto por padrão */
 .dropdown-menu-series,
 .dropdown-menu-filmes {
     display: none;
 }
 
-/* Regra para mostrar o menu suspenso ao passar o mouse */
 .dropdown-series:hover .dropdown-menu-series,
 .dropdown-filmes:hover .dropdown-menu-filmes {
-    display: block !important; /* Sobrescreve o display: 'none' do inline-style */
+    display: block !important; 
 }
