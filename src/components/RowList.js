@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'; 
 import Thumbnail from './Thumbnail'; 
-import styles from './RowList.module.css'; // ⬅️ Importa o CSS Module
+import styles from './RowList.module.css';
 
 function RowList({ title, items }) {
     
@@ -49,7 +49,6 @@ function RowList({ title, items }) {
                 {/* Lista de Filmes/Séries */}
                 <div className={styles.listArea} ref={listRef}> 
                     {items.map(item => (
-                        // Item Wrapper para manter a dimensão do card
                         <div 
                             key={`${item.media_type || 'movie'}-${item.id}`} 
                             className={styles.itemWrapper}
