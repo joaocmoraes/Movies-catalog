@@ -1,12 +1,9 @@
-/* src/components/Thumbnail.module.css */
 
-/* THUMBNAIL CONTAINER BASE */
 .thumbnail {
-    /* Dimensões Padrão (CARD_WIDTH / CARD_HEIGHT_BASE) */
     width: 200px; 
     height: 300px; 
     
-    margin: 0; /* Removido o 'px' solto */
+    margin: 0; 
     cursor: pointer;
     position: relative; 
     
@@ -28,10 +25,8 @@
 
 /* CLASSE APLICADA DURANTE O HOVER */
 .thumbnail.hovered {
-    /* Aplica o zoom e move ligeiramente para cima */
     transform: scale(1.1); 
     top: -10px; 
-    /* Z-index alto para flutuar sobre os cards vizinhos */
     z-index: 10; 
 }
 
@@ -67,7 +62,7 @@
     color: white; /* Cor padrão */
 }
 
-/* RATING ALTO (Substitui o ternário de cor do JS) */
+/* RATING ALTO  */
 .rating.high {
     color: yellow;
 }
@@ -79,29 +74,12 @@
 
 @media (max-width: 600px) {
     .thumbnailContainer {
-        /*
-          CRÍTICO: Remove a largura fixa para deixar o Grid (1fr) dominar.
-          Usa 100% da largura do espaço 1fr da coluna do Grid.
-        */
         width: 100%; 
-        height: auto; /* A altura será definida pela proporção da imagem */
-        
-        /* O padding/margin interno da imagem pode estar limitando.
-           Certifique-se que não haja padding interno fixo que impeça o encolhimento. */
-        
+        height: auto; 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
-    
-    /* CRÍTICO: Use um truque de padding-top para manter a proporção 2:3 */
     .posterImage {
         width: 100%;
-        /* Altura é removida se o Grid ditar a largura */
         height: auto; 
-        
-        /* Se o seu Thumbnail usa uma div de wrapper para manter a proporção da imagem, use isso: */
-        /*
-        padding-top: 150%; 
-        position: relative;
-        */
     }
 }
