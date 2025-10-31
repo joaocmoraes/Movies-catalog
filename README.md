@@ -2,6 +2,10 @@ The Movie Catalog
 
 Este projeto é uma aplicação web moderna e responsiva de catálogo de filmes e séries de TV, desenvolvida em React. Ele permite a busca por títulos e exibe detalhes completos do conteúdo, como elenco, sinopse, e recomendações, consumindo dados diretamente da API do TMDB (The Movie Database).
 
+
+<img width="1892" height="952" alt="image" src="https://github.com/user-attachments/assets/a5b47eaa-004b-4614-abf8-c3fdcb05cc18" />
+
+
 ## ✨ Funcionalidades Principais
 
 * **Navegação Dinâmica:** Menu principal com links para Início, Séries e Filmes.
