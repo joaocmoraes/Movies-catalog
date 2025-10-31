@@ -1,8 +1,3 @@
-/* src/pages/DetailsPage.module.css (FINAL) */
-
-/* ---------------------------------
-   1. LAYOUT GERAL E CARREGAMENTO
-   --------------------------------- */
 .pageContainer {
     background-color: white;
     min-height: 100vh;
@@ -19,9 +14,6 @@
     font-size: 30px;
 }
 
-/* ---------------------------------
-   2. CONTEÚDO PRINCIPAL (2 COLUNAS)
-   --------------------------------- */
 .mainLayout {
     display: flex;
     gap: 30px;
@@ -40,9 +32,6 @@
     color: #333;
 }
 
-/* ---------------------------------
-   3. SEÇÕES REMANESCENTES (Recomendações)
-   --------------------------------- */
 .sectionTitle {
     font-size: 24px;
     font-weight: bold;
@@ -52,23 +41,15 @@
 }
 
 .horizontalList {
-    /* HABILITA A BARRA DE ROLAGEM */
     display: flex;
     overflow-x: scroll; 
     gap: 15px;
-    padding-bottom: 15px; /* Adiciona espaço extra para a barra de rolagem aparecer */
-    
-    /* Adiciona estilos para garantir que os itens não encolham */
-    /* Isso deve ser tratado no Thumbnail, mas ajuda aqui */
+    padding-bottom: 15px;
     min-width: 100%; 
     box-sizing: content-box;
 }
 
-/* Nota: Se o Thumbnail estiver faltando flex-shrink: 0, 
-   a rolagem ainda pode ter problemas. */
-
    @media (max-width: 800px) {
-    /* Transforma as colunas em uma pilha */
     .mainLayout {
         flex-direction: column; 
         gap: 20px;
@@ -76,21 +57,14 @@
         padding: 0 20px;
     }
 
-    /* As colunas agora ocupam 100% da largura em telas pequenas */
     .leftColumn,
     .rightColumn {
         width: 100%; 
     }
-
-    /* ➡️ CRÍTICO: INVERTE A ORDEM PARA MOBILE ⬅️ */
-    
-    /* 1. Coluna Sidebar (Direita) sobe para ficar perto da Hero */
     .rightColumn {
         order: 1; 
-        /* Com isso, a sidebar aparecerá logo após o Hero. */
     }
     
-    /* 2. Conteúdo principal (Sinopse, Elenco, Recomendações) vai para o final */
     .leftColumn {
         order: 2; 
     }
