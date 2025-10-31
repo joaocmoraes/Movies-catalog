@@ -1,7 +1,4 @@
-/* src/components/SearchBar.module.css */
-
 .searchContainer {
-    /* Estilos de fundo e layout do container principal */
     background-image: linear-gradient(to right, #101111ff, #1a1717ff); 
     padding: 80px 40px;
     color: white;
@@ -9,11 +6,10 @@
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o contentWrapper */
+    align-items: center; 
 }
 
 .contentWrapper {
-    /* Limita a largura do conteúdo interno */
     max-width: 1200px;
     width: 100%;
 }
@@ -58,7 +54,6 @@
 }
 
 .button:hover {
-    /* Adicionando a regra de hover do CSS */
     background-color: #0fb86d; 
 }
 
