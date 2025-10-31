@@ -56,11 +56,8 @@
         gap: 10px !important;
     }
     
-    /* ➡️ 2. CRÍTICO: Sobrescrever a largura do Thumbnail Container e da Imagem ⬅️ */
-    
     /* Seleciona o container do thumbnail DENTRO deste grid */
     .gridList :global(.thumbnailContainer) { 
-        /* Usando :global() se o thumbnailContainer for definido em outro CSS Module */
         max-width: 150px !important; 
         width: 100% !important; 
         min-width: unset !important;
