@@ -1,7 +1,6 @@
-// src/pages/BrowsePage.js
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import GridList from '../components/GridList'; // Componente a ser criado
+import GridList from '../components/GridList'; 
 
 const API_PATH_MAP = {
     // Filmes
@@ -19,7 +18,7 @@ const API_PATH_MAP = {
 function BrowsePage() {
     const [searchParams] = useSearchParams();
     
-    // Lê os parâmetros da URL: /browse?type=movie&category=popular
+    // Lê os parâmetros da URL
     const mediaType = searchParams.get('type') || 'movie'; 
     const category = searchParams.get('category') || 'popular'; 
     
@@ -41,7 +40,7 @@ function BrowsePage() {
             
             {/* O GridList fará a busca, exibição (9 cards/coluna) e paginação */}
             <GridList 
-                key={fetchUrl} // Usa a URL como chave para forçar a atualização
+                key={fetchUrl} 
                 fetchUrl={fetchUrl} 
                 mediaType={mediaType} 
             />
