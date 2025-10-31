@@ -29,3 +29,6 @@ Este projeto é uma aplicação web moderna e responsiva de catálogo de filmes 
 * **Gerenciamento de Estado:** React Hooks (`useState`, `useEffect`, `useCallback`)
 
 
+Acesse o projeto :
+
+https://movies-catalog-ras6iaka2-joaocmoraes-projects.vercel.app/
