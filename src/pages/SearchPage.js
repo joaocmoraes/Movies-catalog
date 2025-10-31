@@ -1,10 +1,8 @@
-// src/pages/SearchPage.js (Clean Code Refatorado)
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import tmdb from '../api/tmdbApi';
 import Thumbnail from '../components/Thumbnail';
-import styles from './SearchPage.module.css'; // Usando o import como 'styles'
+import styles from './SearchPage.module.css'; 
 
 // Função Pura: Extrai a lógica complexa de filtragem e mapeamento
 const processResults = (dataResults) => {
@@ -12,16 +10,13 @@ const processResults = (dataResults) => {
 
     return dataResults
         .filter(item => {
-            // Filtra por tipo (apenas 'movie' e 'tv')
             const isValidType = item.media_type === 'movie' || item.media_type === 'tv';
-            // Filtra por ter uma imagem de capa
             const hasPoster = item.poster_path;
 
             return isValidType && hasPoster;
         })
         .map(item => ({
             ...item,
-            // Normaliza o campo 'title' (Filme usa title, Série usa name)
             title: item.title || item.name
         }));
 };
@@ -56,14 +51,14 @@ function SearchPage() {
         } finally {
             setLoading(false);
         }
-    }, [query]); // Depende apenas da query
+    }, [query]);
 
     useEffect(() => {
         fetchResults();
-    }, [fetchResults]); // Chama quando a função fetchResults muda (ou seja, quando a query muda)
+    }, [fetchResults]); // Chama quando a função fetchResults muda 
 
 
-    // Renderização simplificada
+    // Renderização 
     const renderContent = () => {
         if (loading) {
             return <p className={styles.loadingMessage}>Carregando resultados...</p>;
