@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROVIDER_LOGO_URL_BASE } from '../pages/DetailsPage'; // Importa a constante do arquivo principal
+import { PROVIDER_LOGO_URL_BASE } from '../pages/DetailsPage'; 
 import styles from './DetailsSidebar.module.css';
 
 const formatCurrency = (number) => {
@@ -26,7 +26,7 @@ const ProviderList = ({ title, providersList }) => (
 
 
 /**
- * Componente que renderiza a barra lateral (coluna da direita) da página de detalhes.
+ * Componente que renderiza a barra lateral da página de detalhes.
  */
 function DetailsSidebar({ details, providers, keywordsList }) {
     
