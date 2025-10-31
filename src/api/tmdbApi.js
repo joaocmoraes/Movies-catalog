@@ -1,4 +1,4 @@
-// src/api/tmdbApi.js (VERSÃO CORRIGIDA PARA RESOLVER ERROS DE IMPORTAÇÃO)
+
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = process.env.REACT_APP_TMDB_BASE_URL || 'https://api.themoviedb.org/3';
@@ -11,11 +11,7 @@ export const HERO_BACKDROP_URL = 'https://image.tmdb.org/t/p/original';
 // -----------------------------------
 
 
-/**
- * Função genérica para buscar dados da API do TMDB.
- * @param {string} endpoint - O caminho da API (ex: '/movie/popular').
- * @returns {Promise<Object>} Os dados JSON retornados pela API.
- */
+
 const basicFetch = async (endpoint) => {
     try {
         if (!API_KEY) {
@@ -43,23 +39,11 @@ const basicFetch = async (endpoint) => {
 
 // Endpoints do TMDB organizados em um objeto para exportação default
 const tmdb = {
-    // === FUNÇÃO GENÉRICA ADICIONADA PARA O RowList (SOLUÇÃO do erro .get is not a function) ===
-    /**
-     * Função genérica para buscar qualquer endpoint, usada pelo RowList.
-     * @param {string} url - O endpoint completo, ex: '/movie/popular'
-     */
     get: async (url) => basicFetch(url),
-    // =================================================
-
-    // === Funções para a Home Page (Carrosséis) ===
     getPopularMovies: async () => basicFetch('/movie/popular'),
     getPopularTV: async () => basicFetch('/tv/popular'),
     getTopRated: async () => basicFetch('/movie/top_rated'),
-
-    // === Funções de Busca (SOLUÇÃO do erro .searchMulti is not a function) ===
-    /**
-     * Busca Filmes, Séries e Pessoas simultaneamente.
-     */
+    
     searchMulti: async (query) => {
         return basicFetch(`/search/multi?query=${encodeURIComponent(query)}`);
     },
