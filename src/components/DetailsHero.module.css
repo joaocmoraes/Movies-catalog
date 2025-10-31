@@ -1,0 +1,126 @@
+
+.heroContainer {
+    width: 100%;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+.heroContent {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heroPoster {
+    width: 300px;
+    height: 450px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+.heroInfo {
+    flex: 1;
+    padding-top: 30px;
+}
+
+.title {
+    font-size: 42px;
+    margin: 0;
+}
+
+.year {
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+.imdbRating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.starIcon {
+    color: gold; 
+    font-size: 24px;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.sectionSubtitle {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+}
+
+.overview {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.crewContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.crewMemberName {
+    margin: 0;
+    font-size: 16px;
+}
+
+.crewMemberJob {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+    .heroContainer {
+        min-height: 50vh;
+        height: auto; 
+    }
+
+    .imdbRating{
+        display: flex;
+        justify-content: center;
+    }
+
+    .heroContent {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+        position: static; 
+        transform: none;
+    }
+
+    .poster {
+        width: 150px; 
+        height: 225px; 
+        margin-top: 20px;
+    }
+
+    .poster ~ .textContainer { 
+        width: 100%;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .overview {
+        font-size: 15px;
+    }
+}

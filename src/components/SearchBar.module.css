@@ -1,0 +1,77 @@
+/* src/components/SearchBar.module.css */
+
+.searchContainer {
+    /* Estilos de fundo e layout do container principal */
+    background-image: linear-gradient(to right, #101111ff, #1a1717ff); 
+    padding: 80px 40px;
+    color: white;
+    text-align: left;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o contentWrapper */
+}
+
+.contentWrapper {
+    /* Limita a largura do conteúdo interno */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1CE783;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    /* Adicionando a regra de hover do CSS */
+    background-color: #0fb86d; 
+}
+
+
+@media (max-width: 497px) {
+    .input {
+        display: flex;
+        font-size: 16px;
+    }  
+
+    .button {
+        display: flex;
+        font-size: 16px;
+        padding: 15px 10px;
+    }
+}

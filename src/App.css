@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* No seu arquivo CSS */
+
+/* Garante que o menu suspenso esteja oculto por padrão */
+.dropdown-menu-series,
+.dropdown-menu-filmes {
+    display: none;
+}
+
+/* Regra para mostrar o menu suspenso ao passar o mouse */
+.dropdown-series:hover .dropdown-menu-series,
+.dropdown-filmes:hover .dropdown-menu-filmes {
+    display: block !important; /* Sobrescreve o display: 'none' do inline-style */
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* CSS GLOBAL (ou no seu App.js/Home.js container principal) */
+@media (max-width: 800px) {
+    .main-content-container {
+        /* A altura real depende do seu design, use o inspetor para medir. */
+        padding-top: 220px; /* Exemplo: Compensar a altura do header empilhado */
+    }
+}

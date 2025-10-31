@@ -1,0 +1,9 @@
+# Arquivo de Variáveis de Ambiente
+.env
+
+# Diretório de dependências (gerado automaticamente)
+/node_modules
+
+# Diretório de build (gerado ao compilar para produção)
+/build
+/dist

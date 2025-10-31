@@ -1,0 +1,107 @@
+/* src/components/Thumbnail.module.css */
+
+/* THUMBNAIL CONTAINER BASE */
+.thumbnail {
+    /* Dimensões Padrão (CARD_WIDTH / CARD_HEIGHT_BASE) */
+    width: 200px; 
+    height: 300px; 
+    
+    margin: 0; /* Removido o 'px' solto */
+    cursor: pointer;
+    position: relative; 
+    
+    /* Estrutura e visual */
+    overflow: hidden; 
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    background-color: #111;
+    
+    /* Animação base (sem hover) */
+    transform: scale(1); 
+    top: 0; 
+    z-index: 1; 
+    
+    /* Transições */
+    transition: transform 0.3s ease, top 0.3s ease, z-index 0s; 
+}
+
+/* CLASSE APLICADA DURANTE O HOVER */
+.thumbnail.hovered {
+    /* Aplica o zoom e move ligeiramente para cima */
+    transform: scale(1.1); 
+    top: -10px; 
+    /* Z-index alto para flutuar sobre os cards vizinhos */
+    z-index: 10; 
+}
+
+/* LINK WRAPPER (Necessário para o link ocupar 100% da área) */
+.linkWrapper {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+/* IMAGEM */
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; 
+    transition: opacity 0.3s ease;
+}
+
+/* RATING GERAL */
+.rating {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none; 
+    opacity: 1; 
+    transition: opacity 0.3s ease;
+    color: white; /* Cor padrão */
+}
+
+/* RATING ALTO (Substitui o ternário de cor do JS) */
+.rating.high {
+    color: yellow;
+}
+
+/* RATING ESCONDIDO NO HOVER */
+.rating.hiddenOnHover {
+    opacity: 0;
+}
+
+@media (max-width: 600px) {
+    .thumbnailContainer {
+        /*
+          CRÍTICO: Remove a largura fixa para deixar o Grid (1fr) dominar.
+          Usa 100% da largura do espaço 1fr da coluna do Grid.
+        */
+        width: 100%; 
+        height: auto; /* A altura será definida pela proporção da imagem */
+        
+        /* O padding/margin interno da imagem pode estar limitando.
+           Certifique-se que não haja padding interno fixo que impeça o encolhimento. */
+        
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* CRÍTICO: Use um truque de padding-top para manter a proporção 2:3 */
+    .posterImage {
+        width: 100%;
+        /* Altura é removida se o Grid ditar a largura */
+        height: auto; 
+        
+        /* Se o seu Thumbnail usa uma div de wrapper para manter a proporção da imagem, use isso: */
+        /*
+        padding-top: 150%; 
+        position: relative;
+        */
+    }
+}

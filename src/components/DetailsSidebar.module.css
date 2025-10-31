@@ -1,0 +1,83 @@
+.sidebarContainer {
+    color: #333;
+}
+
+.infoBlock {
+    margin-bottom: 20px;
+}
+
+.infoBlockTitle {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.infoBlockContent {
+    margin: 0;
+}
+
+
+.keywordSectionTitle {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.keywordTag {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #eee;
+    border-radius: 4px;
+    margin: 0 5px 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.providerHeader {
+    margin: 0 0 10px 0; 
+    font-size: 18px; 
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 5px;
+}
+
+.providerSection {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.providerSubtitle {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.providerCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.providerLogo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.providerName {
+    font-size: 14px;
+}
+
+.providerLink {
+    color: #0072FF; 
+    text-decoration: none; 
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.providerFallback {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}

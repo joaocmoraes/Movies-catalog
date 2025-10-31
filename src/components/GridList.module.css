@@ -1,0 +1,82 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px 0;
+}
+
+
+/* MENSAGENS DE STATUS (GridList) */
+.statusMessage {
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+/* PAGINAÇÃO CONTAINER */
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 15px;
+}
+
+/* BOTÃO BASE (PAGINAÇÃO) */
+.pageButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white; 
+    transition: color 0.2s ease, transform 0.1s ease;
+    padding: 5px;
+}
+
+.pageButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* BOTÃO ATIVO (Número da página atual) */
+.pageButton.active {
+    color: #1CE783; 
+    font-weight: bold;
+}
+
+/* BOTÃO DE LINK RÁPIDO (Última) */
+.pageButton.link {
+    color: #1CE783; 
+}
+
+@media (max-width: 497px) {
+    
+    /* 1. Regra principal para forçar o grid em 2 colunas */
+    .gridList {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 10px !important;
+    }
+    
+    /* ➡️ 2. CRÍTICO: Sobrescrever a largura do Thumbnail Container e da Imagem ⬅️ */
+    
+    /* Seleciona o container do thumbnail DENTRO deste grid */
+    .gridList :global(.thumbnailContainer) { 
+        /* Usando :global() se o thumbnailContainer for definido em outro CSS Module */
+        max-width: 150px !important; 
+        width: 100% !important; 
+        min-width: unset !important;
+        margin: 0 auto !important;
+    }
+
+    /* Seleciona a imagem DENTRO deste grid */
+    .gridList :global(.thumbnailImage) { 
+        width: 150px !important;
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+    
+    /* Ajuste de fontes e margens internas (para o card parecer menor) */
+    .gridList :global(.cardTitle) {
+        width: 150px !important;
+        font-size: 13px !important;
+    }
+}
