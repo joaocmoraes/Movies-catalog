@@ -1,5 +1,3 @@
-// src/pages/DetailsPage.js (FINAL)
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import tmdb from '../api/tmdbApi';
@@ -10,7 +8,7 @@ import CastList from '../components/CastList';
 import styles from './DetailsPage.module.css';
 
 // Constantes globais (exportadas para DetailsHero, DetailsSidebar e CastList)
-export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500'; // Se Thumbnail usar
+export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500'; 
 export const LARGE_IMAGE_URL_BASE = 'https://image.tmdb.org/t/p/w1280';
 export const ACTOR_IMAGE_URL = 'https://image.tmdb.org/t/p/w185';
 export const PROVIDER_LOGO_URL_BASE = 'https://image.tmdb.org/t/p/original';
@@ -57,7 +55,7 @@ function DetailsPage() {
     if (loading) return <div className={styles.loading}>Carregando Detalhes...</div>;
     if (!details || !details.id) return <div className={styles.error}>Erro: Não foi possível carregar o conteúdo.</div>;
 
-    // --- Formatação dos Dados para os filhos ---
+    // Formatação dos Dados para os filhos
     const cast = credits?.cast?.slice(0, 10) || [];
     const keywordsList = keywords?.keywords || keywords?.results || [];
     const recommendationsList = recommendations?.results?.map(item => ({
@@ -80,7 +78,7 @@ function DetailsPage() {
                     {/* Elenco Principal */}
                     <CastList cast={cast} />
 
-                    {/* Recomendações (Usa a classe horizontalList corrigida) */}
+                    {/* Recomendações */}
                     <section style={{ marginTop: '30px' }}>
                         <h2 className={styles.sectionTitle}>Recomendações</h2>
                         <div className={styles.horizontalList}>
